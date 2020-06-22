@@ -33,13 +33,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return info.count
     }
     
-    //Populate CollectionView with cells.
+    //Populate CollectionView with cells
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //CollectionViewCell object with reuseIdentifier.
         let collectionViewCell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         
-        //edit the cell properties.
+        //edit the cell properties
         collectionViewCell.collectionCellLabel.text = String(info[indexPath.row])
         collectionViewCell.backgroundColor = UIColor.green
         collectionViewCell.layer.cornerRadius = 8
@@ -47,7 +47,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return collectionViewCell
     }
     
-    //what happens when the item is selected.
+    //what happens when the item is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(info[indexPath.row])")
         let collectionViewCell = collectionView.cellForItem(at: indexPath)
@@ -55,13 +55,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    //when user taps a cell,  kinda lon press.
+    //when user taps a cell,  kinda lon press
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let collectionViewCell = collectionView.cellForItem(at: indexPath)
         collectionViewCell?.backgroundColor = UIColor.blue
     }
     
-    //when user untap the cell.
+    //when user untap the cell
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let collectionViewCell = collectionView.cellForItem(at: indexPath)
         collectionViewCell?.backgroundColor = UIColor.green
